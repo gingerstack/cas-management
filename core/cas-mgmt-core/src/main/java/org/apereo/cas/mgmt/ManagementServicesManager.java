@@ -169,7 +169,7 @@ public class ManagementServicesManager implements ServicesManager {
         if (existing != null) {
             val oldName = this.namingStrategy.build(existing, StringUtils.EMPTY);
             val newName = this.namingStrategy.build(service, StringUtils.EMPTY);
-            if (!oldName.equals(newName)) {
+            if (oldName.equals(newName)) {
                 delete(service.getId());
             }
         }
